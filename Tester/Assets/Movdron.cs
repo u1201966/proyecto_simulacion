@@ -10,14 +10,21 @@ public class Movdron : MonoBehaviour
     {
         posicion = gameObject.GetComponent<Transform>().position;
         float an3 = Input.GetAxis("Gatillo");
+        float an1 = Input.GetAxis("Left Analog X");
+        float an2 = Input.GetAxis("Left Analog Y");
 
         if (posicion.y >= 0)
         {
             posicion.y -= grav;
 
-            if (an3 > 0.5)
+            if (an3 > 0.3)
             {
                 posicion.y += an3;
+            }
+            if (posicion.y >= 1 )
+            {
+                posicion.x += an1;
+                posicion.z += -1*an2;
             }
 
         }

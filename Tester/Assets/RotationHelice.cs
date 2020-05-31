@@ -11,9 +11,11 @@ public class RotationHelice : MonoBehaviour
     void FixedUpdate()
     {
         float an3 = Input.GetAxis("Gatillo");
+        
 
         if (an3 > 0.05 && speed <= 50)
         {
+
             speed = 50 * an3;
             if (type == 1 || type == 3)
             {
